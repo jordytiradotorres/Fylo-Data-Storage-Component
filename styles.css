@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+:root {
+  box-sizing: border-box;
+  --color-gradient-1: hsl(6, 100%, 80%);
+  --color-gradient-2: hsl(335, 100%, 65%);
+  --color-pale-blue: hsl(243, 100%, 93%);
+  --color-grayish-blue: hsl(229, 7%, 55%);
+  --color-dark-blue: hsl(228, 56%, 26%);
+  --color-very-dark-blue: hsl(229, 57%, 11%);
+
+  --family-Raleway: 'Raleway', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+figure,
+p {
+  margin: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+body {
+  font-size: 14px;
+  font-family: var(--family-Raleway);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.data,
+.storage {
+  background-color: var(--color-dark-blue);
+}
+
+.data {
+  padding: 3em;
+  border-radius: 10px 80px 10px 10px;
+}
+.data > figure > img {
+  margin-bottom: 2em;
+}
+.data > div a + a {
+  margin-left: 0.8em;
+}
+.data > div > a {
+  padding: 1em;
+  background-color: var(--color-very-dark-blue);
+  border-radius: 10px;
+}
+.data > div > a > img {
+  width: 20px;
+  height: 20px;
+}
+
+.storage {
+  height: 163px;
+  margin-top: 1.5em;
+  border-radius: 10px;
+  text-align: center;
+  color: var(--color-pale-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.storage form {
+  margin: 2em 0;
+}
+.storage label {
+  font-size: 1em;
+}
+.storage input {
+  width: 100%;
+  margin: 0;
+  margin-top: 1em;
+}
+.storage input[type='range'] {
+  position: relative;
+  display: block;
+  -webkit-appearance: none;
+  background-image: linear-gradient(
+    to right,
+    var(--color-gradient-1),
+    var(--color-gradient-2) 81.5%,
+    var(--color-very-dark-blue) 0
+  );
+  background-color: var(--color-very-dark-blue);
+  border-radius: 10px;
+  border: 3px solid var(--color-very-dark-blue);
+}
+
+input[type='range']:focus {
+  outline: none;
+}
+
+.storage input::before,
+.storage input::after {
+  content: '0 GB';
+  position: absolute;
+  top: 2em;
+  color: var(--color-pale-blue);
+  font-size: 0.9em;
+}
+.storage input::after {
+  content: '1000 GB';
+  right: -0.2em;
+}
+.storage input::before {
+  left: -0.2em;
+}
+
+.remaining {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5em;
+  width: 200px;
+  background-color: var(--color-pale-blue);
+  padding: 1.2em;
+  color: var(--color-very-dark-blue);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  color: var(--color-grayish-blue);
+  border-radius: 10px;
+}
+.remaining > strong {
+  font-size: 3em;
+  margin-right: 0.1em;
+  color: initial;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    width: 80%;
+  }
+
+  section {
+    display: flex;
+    align-items: flex-end;
+  }
+  .data {
+    flex: 1;
+    margin-right: 2em;
+  }
+  .storage {
+    flex: 2;
+    text-align: left;
+    position: relative;
+  }
+  .storage > form {
+    width: 90%;
+  }
+  .remaining {
+    position: relative;
+    border-radius: 10px 10px 0 10px;
+    position: absolute;
+    right: 2em;
+    top: -2em;
+    width: 170px;
+    margin-top: 0;
+    padding: 0.5em 0.8em;
+  }
+  .remaining::after {
+    position: absolute;
+    right: 0;
+    bottom: -1.6em;
+    content: '';
+    display: block;
+    border: 0.8em solid;
+    border-color: var(--color-pale-blue) var(--color-pale-blue) transparent
+      transparent;
+  }
+  .remaining > strong {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-image: url(./images/bg-desktop.png);
+    background-position-y: bottom;
+    background-size: contain;
+    background-color: var(--color-very-dark-blue);
+  }
+  .container {
+    width: 60%;
+  }
+}

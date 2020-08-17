@@ -12,5 +12,41 @@
     <link rel="stylesheet" href="./styles.css" />
     <title>Fylo Data Storage Component</title>
   </head>
-  <body></body>
+  <body>
+    <div class="container">
+      <section>
+        <div class="data">
+          <figure>
+            <img src="./images/logo.svg" alt="logo" />
+          </figure>
+
+          <div>
+            <a href="#">
+              <img src="./images/icon-document.svg" alt="icon document" />
+            </a>
+            <a href="#">
+              <img src="./images/icon-folder.svg" alt="icon folder" />
+            </a>
+            <a href="#">
+              <img src="./images/icon-upload.svg" alt="icon upload" />
+            </a>
+          </div>
+        </div>
+        <div class="storage">
+          <form>
+            <label>
+              You've used
+              <strong>815 GB</strong>
+              of your storage
+            </label>
+            <input type="range" min="0" max="1000" value="815" />
+          </form>
+          <p class="remaining">
+            <strong>185</strong>
+            GB left
+          </p>
+        </div>
+      </section>
+    </div>
+  </body>
 </html>
