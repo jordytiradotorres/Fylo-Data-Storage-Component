@@ -77,7 +77,7 @@ body {
 }
 
 .storage {
-  height: 150px;
+  height: 142px;
   margin-top: 1.5em;
   border-radius: 10px;
   text-align: center;
@@ -149,7 +149,7 @@ input[type='range']::-webkit-slider-thumb {
   margin-top: 0.5em;
   width: 200px;
   background-color: var(--color-pale-blue);
-  padding: 1.2em;
+  padding: 0.8em 0;
   color: var(--color-very-dark-blue);
   text-transform: uppercase;
   letter-spacing: 2px;
